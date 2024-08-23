@@ -1,3 +1,4 @@
+import './App.css';
 import logo from "./assets/logo192.png";
 
 
