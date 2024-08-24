@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
-
+import { validateEmail } from '../utils/helperFunctions';
 const FormPage = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [birthDate, setBirthDate] = useState('');
     const [emailError, setEmailError] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [birthDate, setBirthDate] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setEmailError('Invalid email format');
-            return false;
-        } else {
-            setEmailError('');
-            return true;
-        }
-    };
+    // const validateEmail = (email) => {
+    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //     if (!emailRegex.test(email)) {
+    //         setEmailError('Invalid email format');
+    //         return false;
+    //     } else {
+    //         setEmailError('');
+    //         return true;
+    //     }
+    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,10 +35,15 @@ const FormPage = () => {
     };
 
     const handleFormChange = () => {
-        const isValid = name && email && birthDate && validateEmail(email);
+        const isValid = name && email && birthDate && isEmailValid;
         setIsFormValid(isValid);
     };
-
+    const handleEmailError = (errorMessage) => {
+        setEmailError(errorMessage);
+    }
+    const handleEmailValidation = (isValid) => {
+        setIsEmailValid(isValid);
+    }
     return (
         <div className="p-5 max-w-sm mx-auto">
             <form onSubmit={handleSubmit} onChange={handleFormChange}>
@@ -57,7 +63,7 @@ const FormPage = () => {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        onBlur={() => validateEmail(email)}
+                        onBlur={() => validateEmail(email, handleEmailError, handleEmailValidation)}
                         required
                         className="w-full p-2 mt-1 mb-4 border border-gray-300 rounded"
                     />
