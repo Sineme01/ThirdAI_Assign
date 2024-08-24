@@ -1,10 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Form from "./components/formPage.js";
-import Read from "./components/readPage.js";
 import Header from './components/header.js';
-import Home from "./components/home.js";
-
+import routes from './config/routes.js';
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -12,9 +9,13 @@ function App() {
         <Header />
         <div className="flex-1">
           <Routes>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/form' element={<Form />}></Route>
-            <Route path='/read' element={<Read />}></Route>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
           </Routes>
         </div>
       </BrowserRouter>

@@ -1,0 +1,1 @@
+export const workAPI = "https://api.openalex.org/works";
