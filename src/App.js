@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Form from "./components/form.js";
-import Read from "./components/read.js";
+import Form from "./components/formPage.js";
+import Read from "./components/readPage.js";
 import Header from './components/header.js';
 import Home from "./components/home.js";
 
