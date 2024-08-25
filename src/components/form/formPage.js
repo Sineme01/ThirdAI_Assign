@@ -21,7 +21,6 @@ const FormPage = () => {
         handleDateChange,
         validateNameField,
         validateEmailField,
-        handleFormChange,
         setShowPopup,
         setIsConfirmed,
         resetForm,
@@ -47,7 +46,7 @@ const FormPage = () => {
 
     return (
         <div className="p-5 max-w-sm mx-auto my-28 shadow-lg rounded-lg">
-            <form onSubmit={handleSubmit} onChange={handleFormChange}>
+            <form onSubmit={handleSubmit}>
                 <FormInput
                     label="Name"
                     type="text"

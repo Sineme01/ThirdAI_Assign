@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { validateEmail, validateName } from '../utils/formValidator';
 
 const useForm = () => {
@@ -15,7 +15,10 @@ const useForm = () => {
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
-  const handleDateChange = (e) => setBirthDate(e.target.value);
+
+  const handleDateChange = (e) => {
+    setBirthDate(e.target.value);
+  }
 
   const handleNameError = (errorMessage) => {
     setNameError(errorMessage);
@@ -41,10 +44,10 @@ const useForm = () => {
     validateEmail(email, handleEmailError, handleEmailValidation);
   };
 
-  const handleFormChange = () => {
+  useEffect(() => {
     const isValid = isNameValid && isEmailValid && birthDate;
     setIsFormValid(isValid);
-  };
+  }, [isNameValid, isEmailValid, birthDate]);
 
   const resetForm = () => {
     setName('');
@@ -71,7 +74,6 @@ const useForm = () => {
     handleDateChange,
     validateNameField,
     validateEmailField,
-    handleFormChange,
     setShowPopup,
     setIsConfirmed,
     resetForm,
