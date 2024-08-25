@@ -20,7 +20,7 @@ const useFetchWorks = (endPoint) => {
     }
 
     useEffect(() => {
-        //API call
+        //API Call
         getWorkData(endPoint);
     }, [])
 

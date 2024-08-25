@@ -2,21 +2,8 @@ import React from 'react';
 
 const DateInput = ({ value, onChange }) => {
 
-    // const handleDateChange = (e) => {
-    //     const selectedDate = e.target.value;
-    //     // Create a new event object with the selected date
-    //     const syntheticEvent = {
-    //         target: {
-    //             value: selectedDate
-    //         }
-    //     };
-    //     onChange(syntheticEvent);
-    //     onFormChange(syntheticEvent);
-    // };
-
     const handleDateChange = (e) => {
-        onChange(e);  // Call the onChange prop passed from useForm to update the state
-        // onFormChange(); // Directly call the onFormChange function to validate the form
+        onChange(e);  // Calling the onChange prop passed from useForm to update the state.
     };
 
     return (

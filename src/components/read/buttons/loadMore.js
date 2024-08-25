@@ -2,10 +2,10 @@
 
 const LoadMore = ({ loadMore }) => {
     return (
-        <div className='mx-[600px]'>
+        <div className="flex justify-center mt-4">
             <button
                 onClick={loadMore}
-                className="mt-4 py-4 px-10 bg-blue-500 text-white font-semibold font-mono text-2xl rounded-md shadow hover:bg-green-500"
+                className="py-4 px-10 bg-blue-500 text-white font-semibold font-mono text-2xl rounded-md shadow hover:bg-green-500"
             >
                 Load more
             </button>
