@@ -2,7 +2,7 @@ import React from 'react';
 import FormInput from './formInput';
 import DateInput from './dateInput';
 import SubmitButton from './buttons/submitButton';
-import PopupCard from './cards/popupCard';
+import PopupCard from '../../cards/popupCard';
 import useForm from '../../hooks/useForms';
 import { formatBirthDate } from '../../utils/formValidator';
 
