@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+import { workAPI } from '../../api/workAPIEndPoint'; //It is Endpoint of the API to fetch data.
+import useFetchWorks from '../../hooks/useFetchWorks';//It is a custom hook that fetches the required data from the given endPoint.
+import ReadCard from './cards/readCard'; //It is the card to display the Title and Authors of the work.
+import ShimmerCard from './cards/shimmerCard';//It will be rendered till the required data loads.
+import LoadMore from './buttons/loadMore';//Button to load 5 more cards.
+
+const ReadPage = () => {
+
+  const [cardCount, setCardCount] = useState(5);//It will keep count of cards displayed at the moment which is initially 5.
+  const allWorks = useFetchWorks(workAPI);// It will store the entire work cards. It will render only once.
+
+  //Function to update cardCount on the click of Load More button.
+  const loadMore = () => {
+    setCardCount(cardCount + 5);
+  };
+
+  //Conditional Rendering
+  return allWorks?.length === 0 ? (
+    <div className="p-5">
+      <ShimmerCard></ShimmerCard>
+    </div>
+  ) : (
+    <div className="p-5">
+      {allWorks.map((work, index) => (
+        index < cardCount && <ReadCard {...work} />
+      ))}
+      <LoadMore loadMore={loadMore} />
+    </div>
+  );
+};
+
+export default ReadPage;
