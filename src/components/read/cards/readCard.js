@@ -1,4 +1,3 @@
-
 const ReadCard = ({ id, title, authorships }) => {
     return (
         <div key={id} className="bg-gray-100 p-4 mb-4 rounded-md shadow-md mx-52">

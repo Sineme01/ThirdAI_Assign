@@ -1,4 +1,3 @@
-
 const ShimmerCard = () => {
     return (
         <>
