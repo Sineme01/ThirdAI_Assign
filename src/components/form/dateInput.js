@@ -1,5 +1,3 @@
-import React from 'react';
-
 const DateInput = ({ value, onChange }) => {
 
     const handleDateChange = (e) => {

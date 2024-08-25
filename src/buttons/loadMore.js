@@ -1,4 +1,6 @@
-//On click the button will increment the variable cardCount in readPage by 5.
+//This is the button for Load more used in readPage.js.
+//on Click of the button loadMore function will be executed.
+//The function is passed as an argument in readPage.
 
 const LoadMore = ({ loadMore }) => {
     return (

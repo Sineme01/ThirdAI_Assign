@@ -52,6 +52,7 @@ export const validateName = (name, handleNameError, handleNameValidation) => {
     return true;
 };
 
+//Function to ensure that the output date format is as the format in which date is taken as input.
 export const formatBirthDate = (date) => {
     if (!date) return '';
     const [year, month, day] = date.split('-');

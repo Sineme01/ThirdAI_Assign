@@ -1,6 +1,5 @@
-import React from 'react';
-import ThanksCard from './thanksCard';
-import ConfirmationCard from './confirmationCard';
+import ThanksCard from './thanksCard';//Thanks pop-up
+import ConfirmationCard from './confirmationCard';//Show the entered info
 
 const PopupCard = ({ name, email, birthDate, handleOutsideClick, handleConfirm, isConfirmed }) => {
     return (
@@ -9,7 +8,7 @@ const PopupCard = ({ name, email, birthDate, handleOutsideClick, handleConfirm, 
             onClick={handleOutsideClick}
         >
             <div
-                className="bg-white p-5 text-center rounded shadow-lg w-64 h-64 flex flex-col justify-center items-center overflow-hidden"
+                className="bg-white p-5 text-center rounded shadow-lg flex flex-col justify-center items-center overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
             >
                 {!isConfirmed ? (

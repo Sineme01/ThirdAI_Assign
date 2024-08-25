@@ -1,5 +1,3 @@
-// src/components/PageNotFound.jsx
-import React from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';

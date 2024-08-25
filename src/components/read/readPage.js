@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { workAPI } from '../../api/workAPIEndPoint'; //It is Endpoint of the API to fetch data.
+import { workAPI } from '../../api/APIEndPoint'; //It is Endpoint of the API to fetch data.
 import useFetchWorks from '../../hooks/useFetchWorks';
 import ReadCard from '../../cards/readCard'; //It is the card to display the Title and Authors of the work.
 import ShimmerCard from '../../cards/shimmerCard';//It will be rendered till the required data loads.

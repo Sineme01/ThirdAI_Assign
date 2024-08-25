@@ -1,5 +1,4 @@
-import React from 'react';
-
+//Responsible for taking input in name and email section for formPage.
 const FormInput = ({ label, type, value, onChange, onBlur, error }) => (
   <label className="block mb-2">
     {label}:

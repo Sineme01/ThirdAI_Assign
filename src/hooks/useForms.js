@@ -36,9 +36,11 @@ const useForm = () => {
     setIsEmailValid(isValid);
   };
 
+
   const validateNameField = () => {
     validateName(name, handleNameError, handleNameValidation);
   };
+
 
   const validateEmailField = () => {
     validateEmail(email, handleEmailError, handleEmailValidation);
