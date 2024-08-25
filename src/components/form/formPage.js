@@ -30,7 +30,7 @@ const FormPage = () => {
         e.preventDefault();
         setShowPopup(true);
     };
-
+    //This function let's you to manage the events/logic after clicking confirm button.
     const handleConfirm = () => {
         setIsConfirmed(true);
         setTimeout(() => {
