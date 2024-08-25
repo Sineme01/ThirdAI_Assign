@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { workAPI } from '../../api/workAPIEndPoint'; //It is Endpoint of the API to fetch data.
-// import getWorkData from '../../api/fetchData/getWorkData';//It is a custom hook that fetches the required data from the given endPoint.
 import useFetchWorks from '../../hooks/useFetchWorks';
 import ReadCard from '../../cards/readCard'; //It is the card to display the Title and Authors of the work.
 import ShimmerCard from '../../cards/shimmerCard';//It will be rendered till the required data loads.
-import LoadMore from './buttons/loadMore';//Button to load 5 more cards.
+import LoadMore from '../../buttons/loadMore';//Button to load 5 more cards.
 
 const ReadPage = () => {
 
