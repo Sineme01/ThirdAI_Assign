@@ -19,8 +19,8 @@ const FormPage = () => {
         handleNameChange,
         handleEmailChange,
         handleDateChange,
-        handleNameValidation,
-        handleEmailValidation,
+        validateNameField,
+        validateEmailField,
         handleFormChange,
         setShowPopup,
         setIsConfirmed,
@@ -53,7 +53,7 @@ const FormPage = () => {
                     type="text"
                     value={name}
                     onChange={handleNameChange}
-                    onBlur={handleNameValidation}
+                    onBlur={validateNameField}
                     error={nameError}
                 />
                 <FormInput
@@ -61,7 +61,7 @@ const FormPage = () => {
                     type="email"
                     value={email}
                     onChange={handleEmailChange}
-                    onBlur={handleEmailValidation}
+                    onBlur={validateEmailField}
                     error={emailError}
                 />
                 <DateInput value={birthDate} onChange={handleDateChange} />
