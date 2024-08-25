@@ -1,4 +1,6 @@
 import React from 'react';
+import ThanksCard from './thanksCard';
+import ConfirmationCard from './confirmationCard';
 
 const PopupCard = ({ name, email, birthDate, handleOutsideClick, handleConfirm, isConfirmed }) => {
     return (
@@ -11,25 +13,14 @@ const PopupCard = ({ name, email, birthDate, handleOutsideClick, handleConfirm, 
                 onClick={(e) => e.stopPropagation()}
             >
                 {!isConfirmed ? (
-                    <div className="transform transition-all duration-500 ease-in-out">
-                        <h2 className="text-xl font-bold mb-4">Confirm your information</h2>
-                        <p>Name: {name}</p>
-                        <p>Email: {email}</p>
-                        <p>Birth Date: {birthDate}</p>
-                        <button
-                            onClick={handleConfirm}
-                            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-                        >
-                            Confirm
-                        </button>
-                    </div>
+                    <ConfirmationCard
+                        name={name}
+                        email={email}
+                        birthDate={birthDate}
+                        handleConfirm={handleConfirm}
+                    />
                 ) : (
-                    <div className="transform transition-all duration-500 ease-in-out flex flex-col items-center">
-                        <svg className="w-16 h-16 text-green-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p className="text-xl font-bold">Thank you!</p>
-                    </div>
+                    <ThanksCard />
                 )}
             </div>
         </div>
